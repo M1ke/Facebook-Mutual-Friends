@@ -49,8 +49,6 @@ div.fb-friends p {font-size: 3em; text-align: center; margin-bottom: 20px; line-
 div.fb-friends p.friends {display: none;}
 div.fb-friends p.count {font-size: 2em;}
 
-div.post {display: none;}
-
 footer p {width: 1024px; margin: 0 auto;}
 
 html,body {height: 100%;} div.wrap {min-height: 100%;}
