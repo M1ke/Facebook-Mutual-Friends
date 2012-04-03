@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+	<title>Facebook Mutual Friends</title>
+	<meta charset="utf-8"/>
+	<meta name="description" content="A very simple tool which connects to Facebook and tells you which friends you have the most friends in common with."/>
+	<meta name="keywords" content="facebook,app,mutual,friends,in common,m1ke"/>
+	<link href="theme/style.css" rel="stylesheet" type="text/css"/>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+</head>
+<body>
+<div class="wrap">
+	<header>
+		<h1><a href="/">M1ke</a></h1>
+		<h2><a href="/mutualfriends/">Facebook Mutual Friend Counter</a></h2>
+	</header>
+	<div class="clearfix">
+		<div class="main">
+			<p>I was surprised to find nobody had made a simple tool to indicate who you have the most friends in common with. So I made one.</p>
+			<p>The app needs access to Facebook to do its magic, I am not storing any of your details, but feel free to say hi <a href="http://twitter.com/M1ke">on Twitter</a></p>
+
+			<div class="fb-friends">
+				<p><a href="#" class="fb-login">Login with Facebook</a></p>
+				<p class="friends"><a href="#">Who do I have the most mutual friends with?</a></p>
+				<p class="count"></p>
+			</div>
+			<div class="post" style="display: none;">
+				<p>Now let your friends know, and give them a chance to find out who they have most friends in common with!</p>
+				<p><a href="#" class="fb-post">Post to your timeline</a></p>
+				<p><a href="#" class="fb-post send" data-send="true"></a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<footer><p>Created by <a href="http://m1ke.me/">M1ke</a>, 22nd March 2012</p></footer>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>!window.jQuery && document.write('<script src="scripts/jquery/jquery-1.7.1.min.js"><\/script>')</script>
+<div id="fb-root"></div>
+<script type="text/javascript">
+var fbFunctionQ=[];
+if (!window.functionQ)
+{
+	var functionQ=function(fn,context,params)
+	{
+		return function(){
+			fn.apply(context,params);
+		};
+	};
+}
+window.fbAsyncInit=function(){
+    FB.init({
+		appId:'<?php echo $facebook_id?>',
+		channelURL:'_fb_channel.php',
+		status:true,cookie:true,oauth:true,xfbml:true
+    });
+	while (fbFunctionQ.length>0) (fbFunctionQ.shift())();
+};
+(function(d,e,id){
+var js,fjs=d.getElementsByTagName(e)[0];
+if (d.getElementById(id)){return;}
+js=d.createElement(e);js.id=id;
+js.src='//connect.facebook.net/en_GB/all.js';
+fjs.parentNode.insertBefore(js,fjs);
+}(document,'script','facebook-jssdk'));</script>
+<script type="text/javascript" src="scripts/fb-mutual.js"></script>
+</body>
+</html>
