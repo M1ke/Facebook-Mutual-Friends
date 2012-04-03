@@ -4,7 +4,7 @@ I couldn't find anything available online when I wanted to see who I had the mos
 
 ## Installation
 
-Just insert your App ID where provided (I've helpfully put in a dummy variable so the script will crash if you forget) and you're away to play with it.
+Just insert your App ID where provided (I've helpfully put in a dummy variable so the script will crash if you forget) and you're away to play with it. It will load jQuery and the Facebook SDK remotely. The jQuery files are taken from Google's CDN with a fallback; put the file in `scripts/libs`. As of writing this it uses 1.7.1 but any version will do.
 
 ## License
 
