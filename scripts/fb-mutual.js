@@ -21,7 +21,7 @@ var fbMostMutual={
 					}
 					if (key==length)
 					{
-						$('p.friends').html('You have '+largest+' friends in common with <a href="http://www.facebook.com/'+mostMutual.id+'" target="_blank">'+fbMostMutual.mostMutual.name+'</a>');
+						$('p.friends').html('You have '+largest+' friends in common with <a href="http://www.facebook.com/'+fbMostMutual.mostMutual.id+'" target="_blank">'+fbMostMutual.mostMutual.name+'</a>');
 						$count.slideUp();
 						$('div.post').fadeIn().find('a.send').text('Send to '+fbMostMutual.mostMutual.name);
 					}
